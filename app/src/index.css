@@ -1,0 +1,211 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* Technical Precision Color System */
+  --color-slate-950: #0f172a;
+  --color-slate-900: #1e293b;
+  --color-slate-800: #334155;
+  --color-slate-700: #475569;
+  --color-slate-600: #64748b;
+  --color-slate-500: #94a3b8;
+  --color-slate-400: #cbd5e1;
+  --color-slate-300: #e2e8f0;
+  --color-slate-200: #f1f5f9;
+  --color-slate-100: #f8fafc;
+
+  --color-amber-600: #d97706;
+  --color-amber-500: #f59e0b;
+  --color-amber-400: #fbbf24;
+  --color-amber-100: #fef3c7;
+  --color-amber-50: #fffbeb;
+
+  --color-emerald-600: #059669;
+  --color-emerald-500: #10b981;
+  --color-emerald-100: #d1fae5;
+  --color-emerald-50: #ecfdf5;
+
+  --color-rose-600: #e11d48;
+  --color-rose-500: #f43f5e;
+  --color-rose-100: #ffe4e6;
+  --color-rose-50: #fff1f2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--color-slate-950);
+  color: var(--color-slate-900);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Dramatic dark gradient background */
+.bg-technical {
+  background:
+    radial-gradient(ellipse at 10% 0%, rgba(245, 158, 11, 0.25) 0%, transparent 50%),
+    radial-gradient(ellipse at 90% 100%, rgba(139, 92, 246, 0.2) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+    linear-gradient(180deg, #0a0f1e 0%, #0f172a 40%, #1e293b 100%);
+  position: relative;
+  min-height: 100vh;
+}
+
+.bg-technical::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  pointer-events: none;
+}
+
+.bg-technical::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, transparent 0%, rgba(15, 23, 42, 0.4) 100%);
+  pointer-events: none;
+}
+
+/* Monospace technical text */
+.font-technical {
+  font-family: 'IBM Plex Mono', 'Monaco', 'Courier New', monospace;
+  letter-spacing: -0.02em;
+}
+
+/* Measurement mark decorations */
+.measurement-mark::before,
+.measurement-mark::after {
+  content: '';
+  position: absolute;
+  background: var(--color-amber-500);
+  opacity: 0.3;
+}
+
+.measurement-mark::before {
+  width: 2px;
+  height: 12px;
+  top: -6px;
+  left: 0;
+}
+
+.measurement-mark::after {
+  width: 2px;
+  height: 12px;
+  bottom: -6px;
+  left: 0;
+}
+
+/* Precise corner accents */
+.corner-accent {
+  position: relative;
+}
+
+.corner-accent::before,
+.corner-accent::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--color-amber-500);
+}
+
+.corner-accent::before {
+  top: -1px;
+  left: -1px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.corner-accent::after {
+  bottom: -1px;
+  right: -1px;
+  border-left: none;
+  border-top: none;
+}
+
+/* Scan line animation */
+@keyframes scan {
+  0%, 100% { transform: translateY(-100%); opacity: 0; }
+  50% { opacity: 0.1; }
+}
+
+.scan-line {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    var(--color-amber-500) 50%,
+    transparent 100%
+  );
+  animation: scan 3s ease-in-out infinite;
+  pointer-events: none;
+  opacity: 0.1;
+}
+
+/* Precise button states */
+.btn-technical {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-technical::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-technical:hover::before {
+  left: 100%;
+}
+
+/* Staggered fade-in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animation-delay-100 { animation-delay: 0.1s; }
+.animation-delay-200 { animation-delay: 0.2s; }
+.animation-delay-300 { animation-delay: 0.3s; }
+.animation-delay-400 { animation-delay: 0.4s; }
+
+/* Pulse for validation states */
+@keyframes precisePulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(0.98); }
+}
+
+.animate-precisePulse {
+  animation: precisePulse 2s ease-in-out infinite;
+}
+
+/* Technical grid overlay */
+.technical-grid {
+  background-image:
+    repeating-linear-gradient(0deg, var(--color-slate-300) 0px, var(--color-slate-300) 1px, transparent 1px, transparent 40px),
+    repeating-linear-gradient(90deg, var(--color-slate-300) 0px, var(--color-slate-300) 1px, transparent 1px, transparent 40px);
+  background-size: 40px 40px;
+}
