@@ -2,6 +2,7 @@ import { useState, useCallback, useEffect } from 'react'
 import FileUpload from './components/FileUpload'
 import PlatformSelector from './components/PlatformSelector'
 import ValidationResults from './components/ValidationResults'
+import SEOArticle from './components/SEOArticle'
 import { validateFile } from './utils/validation'
 import { initAnalytics, trackPlatformSelected, trackFileValidated } from './utils/analytics'
 
@@ -216,6 +217,9 @@ function App() {
             onReset={handleReset}
           />
         )}
+
+        {/* SEO Article - Educational content for organic traffic */}
+        <SEOArticle />
 
         {/* Footer */}
         <footer className="mt-16 pt-8 border-t-2 border-slate-700">

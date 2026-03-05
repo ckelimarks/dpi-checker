@@ -7,7 +7,7 @@
 
     <!-- Primary SEO Meta Tags -->
     <title>Why Does Printify Show Different DPI Than My File Properties? | Free Print-Ready Validator</title>
-    <meta name="description" content="Get a clear explanation of your file's actual print quality at multiple sizes. Free validator for Printful, Printify & POD platforms. Understand metadata DPI vs effective DPI." />
+    <meta name="description" content="Free DPI checker for Printify & Printful. Upload your design to see effective DPI at multiple print sizes. Plus: complete guide to POD file requirements, 300 DPI explained, and common mistakes to avoid." />
     <meta name="keywords" content="printify dpi checker, printful dpi validator, print ready checker, DPI checker tool, printify dpi requirements, printful validation, POD file validation, print on demand validator, effective dpi calculator, metadata dpi vs effective dpi" />
 
     <!-- Canonical URL -->
@@ -41,7 +41,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-    <!-- Schema.org Structured Data -->
+    <!-- Schema.org Structured Data - Software Application -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -61,12 +61,89 @@
         "Metadata DPI vs Effective DPI explanation",
         "File format and size validation"
       ],
-      "screenshot": "https://print-ready-validator.example.com/screenshot.png",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "ratingCount": "127"
-      }
+      "screenshot": "https://dpi-checker.vercel.app/screenshot.png"
+    }
+    </script>
+
+    <!-- Schema.org Structured Data - FAQ (for Featured Snippets) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why does Printify show different DPI than my file properties?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Your file properties show 'metadata DPI' - just a stored number that doesn't affect print quality. Printify shows 'effective DPI' - the actual print resolution calculated from your pixel dimensions and print size. Both numbers are correct, they just measure different things. What matters for sharp prints is your pixel dimensions relative to print size."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What DPI do I need for print-on-demand?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The industry standard is 300 DPI. For an 8x10 inch print, you need 2400x3000 pixels minimum. For t-shirts (15x18 inch print area), use at least 4500x5400 pixels. While some platforms accept 150 DPI, always design at 300 DPI for flexibility across products and platforms."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I convert a 72 DPI image to 300 DPI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not effectively. Changing metadata DPI in Photoshop doesn't add pixels or detail. To truly have 300 DPI at a given print size, you need the correct pixel dimensions from the start. A 1000x1000px image will only print sharply at 300 DPI if the print is 3.33 inches or smaller."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do SVG files have DPI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, SVG files are vector graphics made of mathematical shapes, not pixels. They can scale to any size without losing quality, making them always print-ready. However, some SVGs contain embedded raster images, which do have resolution limits."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the difference between Printify and Printful DPI requirements?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Printify recommends 300 DPI with a 100 MB file size limit. Printful accepts 150 DPI minimum (300 recommended) with a 200 MB limit. Both platforms require RGB color mode and accept PNG and JPG formats. Printful also accepts SVG files."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Schema.org Structured Data - HowTo (for rich results) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Check If Your Design Is Print-Ready for POD",
+      "description": "Validate your design files for print-on-demand platforms like Printify and Printful",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Select your platform",
+          "text": "Choose your target platform: Printify, Printful, or General print requirements"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Upload your design file",
+          "text": "Drag and drop or click to upload your PNG, JPG, or SVG file"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Review validation results",
+          "text": "Check the multi-size DPI analysis to see print quality at different sizes"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Fix any issues",
+          "text": "Follow the prescriptive guidance to fix resolution, format, or color mode issues"
+        }
+      ]
     }
     </script>
 
