@@ -21,7 +21,7 @@ export default function CreativeFabricaCTA({ overallPass, platform = 'general' }
     trackBrowseClicked(state, platform)
   }
 
-  const primaryUrl = `https://www.creativefabrica.com/subscribe/?utm_source=dpi_validator&utm_medium=cta&utm_campaign=free_trial&utm_content=${state}`
+  const primaryUrl = `https://www.creativefabrica.com/?utm_source=dpi_validator&utm_medium=cta&utm_campaign=free_trial&utm_content=${state}`
   const browseUrl = 'https://www.creativefabrica.com/print-on-demand/?license=commercial&utm_source=dpi_validator&utm_campaign=browse_first'
 
   return (
